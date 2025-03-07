@@ -1,5 +1,4 @@
 package com.user_service.app.repository;
-import static org.assertj.core.api.Assertions.assertThat;
 import com.user_service.app.data.User;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.*;
@@ -7,13 +6,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.Optional;
-
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.result.StatusResultMatchersExtensionsKt.isEqualTo;
 
 @ExtendWith(MockitoExtension.class)
 public class UserRepositoryTest {
@@ -28,7 +21,6 @@ public class UserRepositoryTest {
         userRepository.insert(user);
 
         Assertions.assertNotNull(user);
-//        Assertions.assertNotEquals(,user.getId());
         Mockito.verify(userRepository,Mockito.times(1)).insert(new User(user.getId(),"John","abc","John Doe"));
     }
 
@@ -42,7 +34,6 @@ public class UserRepositoryTest {
 
         Assertions.assertNotNull(getUser);
         Assertions.assertEquals(user,getUser);
-
 
         Assertions.assertNotNull(getUser);
         Assertions.assertEquals("1", getUser.getId());
