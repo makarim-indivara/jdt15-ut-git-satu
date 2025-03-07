@@ -1,4 +1,7 @@
 package com.user_service.app.repository;
 
-public class UserRepository {
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserRepository {
 }
